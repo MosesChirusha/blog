@@ -1,5 +1,12 @@
 <?php
-include 'db_connect.php';
+ // Database connection
+ $servername = "localhost";
+ $username = "root";
+ $password = "";
+ $dbname = "blog";
+
+ // Create connection
+ $conn = new mysqli($servername, $username, $password, $dbname);
 
 if (isset($_GET['id'])) {
     $article_id = $_GET['id'];

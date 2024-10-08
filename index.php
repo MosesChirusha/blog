@@ -48,6 +48,27 @@
             text-align: center;
             margin-top: 50px;
         }
+
+        .btn-edit {
+        background-color: #28a745;
+        border-color: #28a745;
+        color: white;
+    }
+
+    .btn-edit:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+        border-color: #bd2130;
+    }
     </style>
 </head>
 <body>
@@ -155,6 +176,11 @@
                             By <?php echo $article['author']; ?> | <?php echo $time_ago; ?> | <?php echo $article['comment_count']; ?> Comments
                         </small>
                     </div>
+                    <!-- Edit and Delete Buttons -->
+                    <div class="mt-2">
+                        <a href="edit_article.php?id=<?php echo $article['id']; ?>" class="btn btn-edit">Edit</a>
+                        <button class="btn btn-danger" onclick="confirmDelete(<?php echo $article['id']; ?>)">Delete</button>
+                    </div>
                 </div>
             </div>
             
@@ -174,5 +200,12 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+    function confirmDelete(article_id) {
+        if (confirm("Are you sure you want to delete this article?")) {
+            window.location.href = "delete_article.php?id=" + article_id;
+        }
+    }
+    </script>
 </body>
 </html>

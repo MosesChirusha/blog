@@ -12,10 +12,18 @@
         <h2 class="text-center">Edit Article</h2>
 
         <?php
+        
+        // Database connection
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "blog";
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
         // Fetch article data by ID
         $article_id = $_GET['id'];
         $article = $conn->query("SELECT * FROM articles WHERE id = $article_id")->fetch_assoc();
-        ?>
+    ?>
 
         <!-- Form for Editing the Article -->
         <div class="container form-container">
