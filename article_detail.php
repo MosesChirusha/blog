@@ -46,6 +46,7 @@ $comments_result = $stmt_comments->get_result();
     <p><strong>Date:</strong> <?php echo $article['created_at']; ?></p>
     <p><?php echo nl2br($article['content']); ?></p>
     <p><strong>Likes:</strong> <?php echo $article['likes']; ?></p>
+    
 
     <!-- Like button logic -->
     <?php

@@ -50,6 +50,7 @@ $result = $conn->query($sql);
             echo "<a href='article_detail.php?id=" . $row["id"] . "'>Read More</a><br>";
             echo "<a href='article_detail.php?id=" . $row["id"] . "#comments'>Comment</a>";
             echo "</div><hr>";
+            
         }
     } else {
         echo "No articles found.";
